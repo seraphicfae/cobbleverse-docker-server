@@ -12,7 +12,7 @@ This modpack includes Cobblemon as well as many sidemods to help recreate a Poke
 If your server is running mods, then your Minecraft client (the game itself) also needs to have the same mods.
 
 My recommendation is that you use [Prism Launcher](https://prismlauncher.org/). Once it's installed, you can create a new
-instance and go down to the modpack section, then search for **Cobbleverse**, and it will prompt you to install it. Once
+instance and go down to the modrinth section, then search for **Cobbleverse**, and it will prompt you to install it. Once
 you've done that, you'll be able to launch the proper version of Minecraft (equipped with mods) directly from Prism Launcher.
 This is the recommended approach. Afterwards, simply enter the address of your server. If you're on the same machine, you can use
 `localhost:25565` or `127.0.0.1:25565`. You could also use a service like playit.gg. But that is out of the scope of this documentation.
