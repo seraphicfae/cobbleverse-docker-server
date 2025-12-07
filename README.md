@@ -20,7 +20,7 @@ This is the recommended approach. Afterwards, simply enter the address of your s
 ## Useful commands
 ### How to give myself op?
 ```bash
-docker exec -it cobbleverse-server-mc-1 bash
+docker exec -it cobbleverse-docker-server-mc-1 bash
 rcon-cli op YOUR_USERNAME
 exit
 ```
