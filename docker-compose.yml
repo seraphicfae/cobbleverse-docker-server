@@ -1,9 +1,10 @@
 services:
- # playit:
- #   image: ghcr.io/playit-cloud/playit-agent:0.16
- #   network_mode: host
- #   environment:
- #     - SECRET_KEY=
+#  playit:
+#    image: ghcr.io/playit-cloud/playit-agent:0.16
+#    network_mode: host
+#    environment:
+#      - SECRET_KEY=
+
   mc:
     image: itzg/minecraft-server
     environment:
@@ -23,12 +24,14 @@ services:
       ENABLE_WHITELIST: "false"
       DEBUG: "false"
       SEED: "${SEED}"
-      ONLINE_MODE: "${ONLINE_MODE}"
       SPAWN_CHUNKS: "${SPAWN_CHUNKS}"
       VIEW_DISTANCE: "${VIEW_DISTANCE}"
       SIMULATION_DISTANCE: "${SIMULATION_DISTANCE}"
       MODPACK_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: https://modrinth.com/modpack/cobbleverse
+    #  MODRINTH_PROJECTS: |
+    #    alternative-authentication
+    #    no-chat-reports
+      MODRINTH_MODPACK: "https://cdn.modrinth.com/data/Jkb29YJU/versions/DrJAo7Hk/COBBLEVERSE%201.6.mrpack"
       MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
       MODRINTH_FORCE_INCLUDE_FILES: |
         cloth-config
@@ -46,15 +49,14 @@ services:
       BACKUP_NAME: ${SERVER_WORLDNAME}
       PRUNE_BACKUPS_COUNT: ${KEEP_BACKUPS}
       BACKUP_INTERVAL: ${BACKUP_INTERVAL}
-      BACKUP_ON_STARTUP: false
+      BACKUP_ON_STARTUP: "false"
       RCON_PASSWORD: ${RCON_PASSWORD}
       RCON_HOST: mc
+      TAR_COMPRESS: "zstd"
       TZ: ${TZ}
     volumes:
       - ./data:/data:ro
       - ./backups:/backups
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
     depends_on:
       - mc
     restart: unless-stopped
