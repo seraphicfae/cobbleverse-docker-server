@@ -29,7 +29,8 @@ docker compose exec mc-backup /usr/bin/backup now
 ```
 
 ## How to import a backup?
-> [!WARNING] Shutdown the server to prevent corruption: `docker compose down`. Ensure data transfer stops entirely.
+> [!WARNING]
+> Shutdown the server to prevent corruption: `docker compose down`. Ensure data transfer stops entirely.
 
 Now, simply go to your backups folder and extract the archived file, then place it inside the **data** directory, <u>deleting or overwriting your previous world</u>. After that, start the server as usual.
 
