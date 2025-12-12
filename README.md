@@ -16,27 +16,29 @@ I left a commented out image called `"playit:0.16"`. Simply uncomment every line
 
 If you want to play on the server, I recommend using [Prism Launcher](https://prismlauncher.org/) to install the modpack, since your Minecraft client and the server need to have the same mods. Once Prism Launcher is installed, create a new instance and locate the Modrinth tab. Search for **CobbleVerse**, and it will prompt you to install it. After that, you’ll be able to launch the correct modded version of Minecraft directly from Prism Launcher.
 
-## Useful commands
-### How to give myself op?
+## Useful Commands
+### How To Give Myself OP?
 ```bash
 docker exec -it cobbleverse-docker-server-mc-1 bash
 rcon-cli op YOUR_USERNAME
 exit
 ```
-## How to trigger a backup?
+## How To Trigger A Backup?
 ```bash
 docker compose exec mc-backup /usr/bin/backup now
 ```
 
-## How to import a backup?
+## How To Import A Backup?
 > [!WARNING]
 > Shutdown the server to prevent corruption: `docker compose down`. Ensure data transfer stops entirely.
 
 Now, simply go to your backups folder and extract the archived file, then place it inside the **data** directory, <u>deleting or overwriting your previous world</u>. After that, start the server as usual.
 
-You can also run the command:
+You can also run this command while you're in your server directory:
 `tar -xzf ./backups/<your-backup-filename>.tgz -C ./data` Make sure to adjust the command for your world name and timestamp.
 
+## What Are These Commented Out Mods?
+**Alternative Authenticator** and **No Chat Report** only exist to make it so users logging in via [Ely.by](https://ely.by/) can join your server. In most cases, you don't need this. Feel free to remove the commented out section. 
 
 
  
