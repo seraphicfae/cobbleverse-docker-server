@@ -29,6 +29,13 @@ docker compose exec mc-backup /usr/bin/backup now
 ```
 
 ## How to import a backup?
-**IMPORTANT: shutdown the server via `docker compose down` to ensure data transfer stops entirely.**
-Run the command: `tar -xzf ./backups/<your-backup-filename>.tgz -C ./data` Adjust for your world name, and timestamp, as
-well as making sure you're in the working directory of the server. Simply start the server again and ta-da!
+> [!WARNING] Shutdown the server to prevent corruption: `docker compose down`. Ensure data transfer stops entirely.
+
+Now, simply go to your backups folder and extract the archived file, then place it inside the **data** directory, <u>deleting or overwriting your previous world</u>. After that, start the server as usual.
+
+You can also run the command:
+`tar -xzf ./backups/<your-backup-filename>.tgz -C ./data` Make sure to adjust the command for your world name and timestamp.
+
+
+
+ 
