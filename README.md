@@ -5,14 +5,16 @@
 ### Docker
 Docker is a way of containerizing applications and their dependencies, and does so in a way very akin to virtual machines
 
-### How to Play
-You will want to clone this github repo and edit the .env to your liking. If your server is running mods, then your Minecraft client (the game itself) also needs to have the same mods.
+## Quick Start
+Download this repository and unzip it. Make sure you’re in the correct directory. You’ll see an **.env** file; open it in your text editor and edit the values to what you want. 
 
-My recommendation is that you use [Prism Launcher](https://prismlauncher.org/). Once it's installed, you can create a new
-instance and go down to the modrinth section, then search for **CobbleVerse**, and it will prompt you to install it. Once
-you've done that, you'll be able to launch the proper version of Minecraft (equipped with mods) directly from Prism Launcher.
-This is the recommended approach. Afterwards, simply run `docker compose up` in the directory, and enter the address of your server. If you're on the same machine, you can use
-`localhost:25565` or `127.0.0.1:25565`. You could also use a service like [playit](https://playit.gg) to have a proxy service infront of your network so you don't have to worry about port forwarding or sharing your IP with others. 
+Next, run the command `docker compose up` in your terminal. This process can take 5–10 minutes, because it is downloading the modpack and fabric server. Once the console shows a message like "Running" or "Done!" the server is up and running.
+
+If you're on the same machine, you can connect using **localhost:25565** or **127.0.0.1:25565**. You can also use a service like [playit](https://playit.gg) to set up a proxy in front of your network so you don’t have to worry about port forwarding or sharing your IP. 
+
+I left a commented out image called `"playit:0.16"`. Simply uncomment every line and paste in the secret key you obtained when creating your tunnel.
+
+If you want to play on the server, I recommend using [Prism Launcher](https://prismlauncher.org/) to install the modpack, since your Minecraft client and the server need to have the same mods. Once Prism Launcher is installed, create a new instance and locate the Modrinth tab. Search for **CobbleVerse**, and it will prompt you to install it. After that, you’ll be able to launch the correct modded version of Minecraft directly from Prism Launcher.
 
 ## Useful commands
 ### How to give myself op?
