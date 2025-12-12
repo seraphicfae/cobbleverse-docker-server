@@ -1,21 +1,19 @@
 ## What Exactly Is This?
-### Cobbleverse
-Cobbleverse is a modpack (collection of mods) for Java Minecraft that bring an experience much like the main series of Pokemon games to the world of Minecraft
+### CobbleVerse
+[CobbleVerse](https://www.lumyverse.com/en/cobbleverse/) is a modpack (collection of mods) for Java Minecraft that bring an experience like the main series of Pokemon games to the world of Minecraft
 
 ### Docker
 Docker is a way of containerizing applications and their dependencies, and does so in a way very akin to virtual machines
 
 ### How to Play
 You will want to clone this github repo and edit the .env to your liking.
-The server is using a modpack known as [Cobbleverse](https://modrinth.com/modpack/cobbleverse).
-This modpack includes Cobblemon as well as many sidemods to help recreate a Pokemon-like experience.
-If your server is running mods, then your Minecraft client (the game itself) also needs to have the same mods.
+The server is using a modpack known as [Cobbleverse](https://modrinth.com/modpack/cobbleverse). If your server is running mods, then your Minecraft client (the game itself) also needs to have the same mods.
 
 My recommendation is that you use [Prism Launcher](https://prismlauncher.org/). Once it's installed, you can create a new
-instance and go down to the modrinth section, then search for **Cobbleverse**, and it will prompt you to install it. Once
+instance and go down to the modrinth section, then search for **CobbleVerse**, and it will prompt you to install it. Once
 you've done that, you'll be able to launch the proper version of Minecraft (equipped with mods) directly from Prism Launcher.
-This is the recommended approach. Afterwards, simply enter the address of your server. If you're on the same machine, you can use
-`localhost:25565` or `127.0.0.1:25565`. You could also use a service like playit.gg. But that is out of the scope of this documentation.
+This is the recommended approach. Afterwards, simply run `docker compose up` in the directory, and enter the address of your server. If you're on the same machine, you can use
+`localhost:25565` or `127.0.0.1:25565`. You could also use a service like [play-it](https://playit.gg) to have a proxy service infront of your network so you don't have to worry about port forwarding or sharing your IP with others. 
 
 ## Useful commands
 ### How to give myself op?
