@@ -24,7 +24,7 @@ the server need to have the same mods. Once Prism Launcher is installed, create 
 you to install it. After that, you’ll be able to launch the correct modded version of Minecraft directly from Prism Launcher.
 
 ```bash
-git clone https://github.com/seraphicfae/cobbleverse-docker
+git clone https://github.com/seraphicfae/cobbleverse-docker-server
 cd cobbleverse-docker
 nano .env
 docker compose up -d
@@ -37,7 +37,7 @@ docker compose up -d
 
 ### How To Give Myself OP?
 ```bash
-docker exec -it cobbleverse-docker-mc-1 bash
+docker exec -it cobbleverse-docker-server-mc-1 bash
 rcon-cli
 op YOUR_USERNAME
 exit
