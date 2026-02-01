@@ -1,0 +1,55 @@
+services:
+#  playit:
+#    image: ghcr.io/playit-cloud/playit-agent
+#    network_mode: host
+#    environment:
+#      - SECRET_KEY=${KEY}
+
+  mc:
+    image: itzg/minecraft-server
+    environment:
+      EULA: "true"
+      TYPE: "FABRIC"
+      VERSION: "1.21.1"
+      MEMORY: "6G"
+      SERVER_NAME: ${SERVER_NAME}
+      MOTD: ${SERVER_MOTD}
+      ICON: ${SERVER_ICON}
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      ALLOW_FLIGHT: "true"
+      SPAWN_MONSTERS: "false"
+      ENABLE_COMMAND_BLOCK: "true"
+      DEBUG: "false"
+      SEED: "${SEED}"
+      SPAWN_CHUNKS: "${SPAWN_CHUNKS}"
+      VIEW_DISTANCE: "${VIEW_DISTANCE}"
+      SIMULATION_DISTANCE: "${SIMULATION_DISTANCE}"
+      MODPACK_PLATFORM: MODRINTH
+    #  MODRINTH_PROJECTS: |
+    #    alternative-authentication
+    #    no-chat-reports
+      MODRINTH_MODPACK: "${COBBLEVERSE_VERSION}"
+      MODRINTH_DOWNLOAD_DEPENDENCIES: "required"
+      MODRINTH_FORCE_INCLUDE_FILES: |
+        cloth-config
+        cloth-config2
+    volumes:
+      - ./data:/data
+    ports:
+      - "25565:25565"
+    restart: unless-stopped
+
+  mc-backup:
+    image: itzg/mc-backup
+    container_name: mc-backup
+    environment:
+      BACKUP_ON_STARTUP: "false"
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      RCON_HOST: mc
+      TAR_COMPRESS: "zstd"
+    volumes:
+      - ./data:/data:ro
+      - ./backups:/backups
+    depends_on:
+      - mc
+    restart: unless-stopped
