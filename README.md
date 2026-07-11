@@ -25,7 +25,7 @@ you to install it. After that, you’ll be able to launch the correct modded ver
 
 ```bash
 git clone https://github.com/seraphicfae/cobbleverse-docker-server
-cd cobbleverse-docker
+cd cobbleverse-docker-server
 nano .env
 docker compose up -d
 ```
